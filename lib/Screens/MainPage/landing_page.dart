@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+
 
   @override
   _LandingPageState createState() => _LandingPageState();
@@ -90,7 +90,7 @@ class _LandingPageState extends State<LandingPage> {
               backgroundColor: Colors.black87,
               // show and hide SliverAppBar Title
               title: _isSliverAppBarExpanded
-                  ? Column(
+                  ? Column( 
                       children: [
                         Text(
                           'Remaining Time of Isha',
