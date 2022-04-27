@@ -20,7 +20,7 @@ pop(context) {
 
 customAppBar(BuildContext context, String title) {
   return AppBar(
-    elevation: 0,
+    elevation: 5,
     flexibleSpace: Container(
       decoration: const BoxDecoration(
         image: DecorationImage(

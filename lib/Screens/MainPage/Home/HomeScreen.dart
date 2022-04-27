@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:provider/provider.dart';
 import 'package:quran_app/Provider/main_provider.dart';
+import 'package:quran_app/Screens/MainPage/Drawer/Drawerr%20Screen.dart';
 import 'package:quran_app/Screens/MainPage/Dua/dua_screen.dart';
 import 'package:quran_app/Screens/MainPage/Khalima/khalima_screen.dart';
 import 'package:quran_app/Screens/MainPage/Quran/Quran.dart';
@@ -21,12 +22,16 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+final _scaffoldKey = GlobalKey<ScaffoldState>();
+
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+          key: _scaffoldKey,
+          drawer: Darwerr(),
           resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
@@ -45,7 +50,11 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       // Header
-                      headerInfo(context, size),
+
+                      headerInfo(
+                        context,
+                        size,
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
@@ -106,18 +115,23 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
+                    InkWell(
+                      onTap: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        elevation: 5,
+                        child: CircleAvatar(
+                            radius: 15,
+                            backgroundColor: const Color(0xffFFFFFF),
+                            child: Icon(
+                              Icons.menu,
+                              color: primayColor,
+                            )),
                       ),
-                      elevation: 5,
-                      child: CircleAvatar(
-                          radius: 15,
-                          backgroundColor: Color(0xffFFFFFF),
-                          child: Icon(
-                            Icons.menu,
-                            color: primayColor,
-                          )),
                     ),
                     Card(
                       shape: RoundedRectangleBorder(
@@ -126,7 +140,7 @@ class _HomeState extends State<Home> {
                       elevation: 5,
                       child: CircleAvatar(
                         radius: 15,
-                        backgroundColor: Color(0xffFFFFFF),
+                        backgroundColor: const Color(0xffFFFFFF),
                         child: Container(
                           height: 25,
                           width: 25,
@@ -266,7 +280,7 @@ class _HomeState extends State<Home> {
 
   // ScreenList //
   Widget screensList(BuildContext context, Size size) {
-    MyProvider provider = Provider.of<MyProvider>(context,listen: false);
+    MyProvider provider = Provider.of<MyProvider>(context, listen: false);
     return Card(
       elevation: 5,
       shape: RoundedRectangleBorder(
@@ -286,7 +300,7 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               InkWell(
-                onTap: (){
+                onTap: () {
                   push(context, TabBarDemo());
                 },
                 child: Column(
@@ -311,7 +325,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   provider.screenIndex = 1;
                   pushUntil(context, MainScreen());
                 },
@@ -337,7 +351,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   provider.screenIndex = 2;
                   pushUntil(context, MainScreen());
                 },
@@ -363,7 +377,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   provider.screenIndex = 2;
                   pushUntil(context, MainScreen());
                 },
@@ -685,7 +699,7 @@ class _HomeState extends State<Home> {
       children: [
         InkWell(
           onTap: () {
-            push(context,const NameofAllah());
+            push(context, const NameofAllah());
           },
           child: Card(
             elevation: 10,
