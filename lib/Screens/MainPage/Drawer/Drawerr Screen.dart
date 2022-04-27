@@ -6,7 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quran_app/Screens/MainPage/Dua/dua_screen.dart';
-import 'package:quran_app/Screens/MainPage/Khalima/khalima_screen.dart';
+import 'package:quran_app/Screens/MainPage/Khalima/kalma_screen.dart';
 import 'package:quran_app/Screens/MainPage/Quran/Favorite.dart';
 import 'package:quran_app/Screens/MainPage/Quran/Quran.dart';
 import 'package:quran_app/Screens/MainPage/Quran/tabbarview.dart';

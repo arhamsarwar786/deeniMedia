@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:quran_app/Provider/main_provider.dart';
 import 'package:quran_app/Screens/MainPage/Drawer/Drawerr%20Screen.dart';
 import 'package:quran_app/Screens/MainPage/Dua/dua_screen.dart';
-import 'package:quran_app/Screens/MainPage/Khalima/khalima_screen.dart';
 import 'package:quran_app/Screens/MainPage/Quran/Quran.dart';
 import 'package:quran_app/Screens/MainPage/Quran/tabbarview.dart';
 import 'package:quran_app/Screens/MainPage/Tasbeeh/tasbeeh_screen.dart';

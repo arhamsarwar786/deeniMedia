@@ -5,11 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:quran_app/Provider/main_provider.dart';
 import 'package:quran_app/Screens/MainPage/Dua/dua_screen.dart';
-import 'package:quran_app/Screens/MainPage/Khalima/khalima_screen.dart';
+
 import 'package:quran_app/Screens/MainPage/Tasbeeh/tasbeeh_screen.dart';
 import 'package:quran_app/Utils/constants.dart';
 import 'package:quran_app/widgets.dart';
 import 'Home/HomeScreen.dart';
+import 'Khalima/kalma_screen.dart';
 
 List<Widget> screens = [
   const Home(),
