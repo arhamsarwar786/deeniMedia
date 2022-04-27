@@ -4,8 +4,7 @@ import 'package:flutter/cupertino.dart';
 class APIManager {
   http.Client client = http.Client();
 
-  Future suratRes(
-    BuildContext context,{@required chapterID}) async {
+  Future suratRes(BuildContext context, {@required chapterID}) async {
     return await client
         .get(
       Uri.parse(
@@ -19,13 +18,10 @@ class APIManager {
     });
   }
 
-
-  Future chapterSurats(
-    BuildContext context) async {
+  Future chapterSurats(BuildContext context) async {
     return await client
         .get(
-      Uri.parse(
-          'http://api.quran.com/api/v3/chapters'),
+      Uri.parse('http://api.quran.com/api/v3/chapters'),
     )
         .then((response) async {
       print("All Surats Names : ${response.body}");
